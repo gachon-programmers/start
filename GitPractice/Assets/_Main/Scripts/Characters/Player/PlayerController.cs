@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     private InputAction jumpAction;
     [SerializeField] private Vector2 moveDir;
     [SerializeField] private float moveSpeed = 5f;
-    
+    [SerializeField] private float jumpForce = 7f;
+
     private Rigidbody2D rigid;
 
     bool CanJump()
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Jump");
         if (CanJump())
         {
-            rigid.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+            rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
     void Started(InputAction.CallbackContext context)
