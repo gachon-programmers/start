@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     bool CanJump()
     {
         Debug.DrawRay(transform.position, Vector2.down * 0.5f, Color.red, 2f);
-        return Physics2D.Raycast(transform.position, Vector2.down, 0.5f, 1 << LayerMask.NameToLayer("Ground"));
+        return Physics2D.Raycast(transform.position, Vector2.down, 0.2f, 1 << LayerMask.NameToLayer("Ground"));
     }
 
     void OnJump(InputAction.CallbackContext context)
